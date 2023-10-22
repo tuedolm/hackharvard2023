@@ -1,13 +1,25 @@
-// JoinSession.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
-const JoinSession = () => {
+const JoinGame = () => {
   const [sessionId, setSessionId] = useState('');
 
-  const joinGame = () => {
-    // Your logic to handle joining the game
-    console.log('Joining game with session id: ', sessionId);
+  const joinGame = async () => {
+    // Fetch API logic to check if the game with the provided session ID exists
+    const response = await fetch(`YOUR_MONGODB_URL/${sessionId}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    const data = await response.json();
+    if (data) {
+      console.log('Joining game with session id: ', sessionId);
+      // Additional logic to handle joining the game
+    } else {
+      console.log('Game with session id not found');
+    }
   };
 
   return (
@@ -45,4 +57,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default JoinSession;
+export default JoinGame;

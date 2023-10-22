@@ -3,7 +3,7 @@ const {getFirestore, FieldValue} = require('firebase-admin/firestore');
 require('dotenv').config();
 
 const firebaseConfig = {
-    apiKey: AIzaSyBCrkAjcSxLsrzNEij2EoeAp5Yj6D1MejA ,
+    apiKey: 'AIzaSyBCrkAjcSxLsrzNEij2EoeAp5Yj6D1MejA' ,
     authDomain: "studied-slate-402702.firebaseapp.com",
     projectId: "studied-slate-402702",
     storageBucket: "studied-slate-402702.appspot.com",
@@ -114,3 +114,16 @@ const validateKey = async (key, question) => {
         return key === questionExists.data().validateKey;
     }
 }
+
+
+
+export {
+    getQuestion,
+    createSession,
+    createUser,
+    joinSession,
+    incrementStage,
+    validateAnswer,
+    validateKey
+  };
+  
