@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore, FieldValue } from 'firebase/firestore';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBCrkAjcSxLsrzNEij2EoeAp5Yj6D1MejA",
+    apiKey: env.FIREBASE_KEY,
     authDomain: "studied-slate-402702.firebaseapp.com",
     projectId: "studied-slate-402702",
     storageBucket: "studied-slate-402702.appspot.com",
